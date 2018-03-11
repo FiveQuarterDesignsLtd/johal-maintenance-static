@@ -1,0 +1,206 @@
+/*!
+Theme Name: johal-maintenance
+Theme URI: http://underscores.me/
+Author: Anmol Nandha - Five Quarter Designs
+Author URI: http://www.fivequarterdesigns.com
+Description: Johal Maintenance - All maintenance services under one roof
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: johal-maintenance
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+johal-maintenance is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+1. NORMALIZE
+2. FONTS - Font styles are in inc/_fonts.scss
+3. COLOURS - Colour styles are in inc/_colors.scss
+4. BUTTONS - Button styles are in inc/_buttons.scss
+5. GENERAL
+6. HEADER
+7. NAVBAR
+8. HERO
+9. PAGE CONTENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+>>> 2. FONTS
+--------------------------------------------------------------*/
+
+@import 'inc/_fonts';
+
+/*--------------------------------------------------------------
+>>> 3. COLORS
+--------------------------------------------------------------*/
+
+@import 'inc/_colors';
+
+/*--------------------------------------------------------------
+>>> 4. BUTTONS
+--------------------------------------------------------------*/
+
+@import 'inc/_buttons';
+
+/*--------------------------------------------------------------
+>>> 5. GENERAL
+--------------------------------------------------------------*/
+
+/**
+* 1. Correct the line height in all browsers.
+* 2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+	line-height: 1.15;
+	/* 1 */
+	-webkit-text-size-adjust: 100%;
+	/* 2 */
+	body {
+		margin: 0;
+		font-size: 16px;
+		@include robotoCondensed(400);
+		background-image: url(../images/page-bg.png);
+		background-repeat: repeat;
+		.page {
+			background-color: white;
+			max-width: 960px;
+			h1, h2, h3 {
+				@include nunito(500);
+			}
+			a {
+				color: black;
+				transition: all 0.5s ease;
+				&:hover {
+					color: $primaryorange;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+>>> 6. HEADER
+--------------------------------------------------------------*/
+
+header {
+	.logo-contact {
+		padding-left: 0;
+		padding-right: 0;
+		.social-info {
+			.social-info-title {
+				color: $primaryorange;
+				font-size: 1.125rem;
+			}
+			.social-info-details {
+				color: black;
+				font-size: 2rem;
+				@include robotoCondensed(700);
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+>>> 7. NAVBAR
+--------------------------------------------------------------*/
+
+.main-nav {
+	border-top: 1px solid lighten(black, 90%);
+	padding-left: 0;
+	padding-right: 0;
+	.navbar-collapse {
+		.search-form {
+			.form-control {
+				border: 0;
+				border-radius: 0;
+				border-bottom: 1px solid lighten(black, 90%);
+				font-size: 0.75rem;
+				padding: .375rem 0;
+			}
+			.btn-search {
+				font-size: 0.8125rem;
+			}
+		}
+	}
+	.navbar-nav {
+		.nav-item {
+			.nav-link {
+				@include nunito(300);
+				font-size: 0.8125rem;
+				color: black;
+				text-transform: uppercase;
+				transition: all 0.5s ease;
+				&:hover {
+					color: $primaryorange;
+				}
+			}
+			&.active {
+				.nav-link {
+					@include nunito(600);
+					font-size: 0.8125rem;
+					color: black;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+>>> 8. HERO
+--------------------------------------------------------------*/
+
+.hero {
+	width: 100%;
+	&.home-hero {
+		min-height: 450px;
+		position: relative;
+		.overlay {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			h1 {
+				text-transform: uppercase;
+				color: white;
+				line-height: 150%;
+				span {
+					padding: 0 .7rem;
+					display: inline;
+					background: $primaryorange;
+				}
+			}
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+>>> 9. PAGE CONTENT
+--------------------------------------------------------------*/
+
+.page-content {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	width: 100%;
+
+	/* 9a. HOME WELCOME CONTENT */
+	&.home-welcome {
+		@include nunito(400);
+		color: lighten(black, 20%);
+		text-align: center;
+		font-size: 1.125rem;
+	}
+}
